@@ -53,7 +53,6 @@ class CrudController extends Controller
     //method untuk edit data
     public function edit($id)
     {
-
         $data_barang = DB::table('data_barang')->where('id',$id)->first();
       return view('crud_edit_data',['data_barang' => $data_barang]);
     }

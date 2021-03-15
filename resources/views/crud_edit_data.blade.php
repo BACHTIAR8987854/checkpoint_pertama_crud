@@ -5,8 +5,9 @@
 <div class="row">
 <div class="col-12 col-md-12 col-lg-12">
   <div class="card"> 
-    <form action="{{route('crud.simpan')}}" method="POST">
+    <form action="{{ route('crud.update',$data_barang->id) }}" method="POST">
     @csrf
+    @method('patch')
   <div class="card-body">   
 <div class="row">
 <div class="col-md-6">
@@ -16,7 +17,13 @@
         @enderror>Kode Barang @error('kode_barang')
           | {{$message}}
         @enderror</label>
-    <input type="text" name="kode_barang" value="{{old('kode_barang')}}" class="form-control">
+    <input type="text" name="kode_barang" 
+    @if (old('kode_barang'))
+        value="{{ old('kode_barang') }}" 
+    @else 
+        value="{{ $data_barang->kode_barang }}" 
+    @endif
+    class="form-control">
   </div>
 </div>
 <div class="col-md-6">
@@ -26,8 +33,13 @@
         @enderror>Nama Barang @error('nama_barang')
             | {{$message}}
            @enderror</label>
-        <input type="text" name="nama_barang" value="{{old('nama_barang')}}" class="form-control">
-      </div>
+           <input type="text" name="nama_barang" 
+           @if (old('kode_barang'))
+               value="{{ old('nama_barang') }}" 
+           @else 
+               value="{{ $data_barang->nama_barang }}" 
+           @endif
+           class="form-control">
     </div>
   </div>
 </div>
