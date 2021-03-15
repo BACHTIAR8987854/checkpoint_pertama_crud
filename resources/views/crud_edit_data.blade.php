@@ -3,12 +3,12 @@
 @section('content')
 <div class="section-body">
 <div class="row">
-<div class="col-12 col-md-12 col-lg-12">
-  <div class="card"> 
+  <div class="col-12 col-md-12 col-lg-12">
+    <div class="card"> 
     <form action="{{ route('crud.update',$data_barang->id) }}" method="POST">
-    @csrf
-    @method('patch')
-  <div class="card-body">   
+      @csrf
+      @method('patch')
+    <div class="card-body">   
 <div class="row">
 <div class="col-md-6">
   <div class="form-group">
@@ -44,12 +44,12 @@
   </div>
 </div>
 <div class="card-footer text-right">
-  <button class="btn btn-primary mr-1" type="submit">Submit</button>
-    <button class="btn btn-secondary" type="reset">Reset</button>
-      </div>
-        </form>
-    </div>
-  </div>
+<button class="btn btn-primary mr-1" type="submit">Submit</button>
+<button class="btn btn-secondary" type="reset">Reset</button>
+</div>
+</form>
+</div>
+</div>
 </div>    
 @endsection
 @push('page-scripts')
